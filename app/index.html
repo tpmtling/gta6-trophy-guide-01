@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA VI Trophy Guide & Platinum Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI PlayStation 5 trophies: platinum roadmap, the one missable trophy, cited per-trophy guides, filters and a spoiler shield.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-text">
+    <p class="kicker">Grand Theft Auto VI · PlayStation 5 · Offline guide & tracker</p>
+    <h1>Leonida Legend</h1>
+    <p class="tagline">Every one of the 55 trophies, a 3-stage roadmap to the platinum, the one missable trophy flagged in red, and a cited guide for each trophy — all in one page that works with the network off.</p>
+    <div class="hero-stats" id="heroStats"></div>
+  </div>
+  <div class="progress-card">
+    <p class="progress-big" id="progressBig">0 / 55</p>
+    <p class="progress-label" id="progressLabel">trophies earned</p>
+    <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+    <p class="progress-next" id="progressNext"></p>
+    <div class="progress-actions">
+      <button id="exportBtn" type="button">Export progress</button>
+      <label class="import-label">Import<input id="importInput" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button" class="ghost">Reset</button>
+    </div>
+  </div>
+</header>
+
+<nav class="toolbar" aria-label="Trophy filters">
+  <div class="chips" id="kindChips" role="group" aria-label="Filter by kind"></div>
+  <div class="toolbar-row">
+    <label>Grade
+      <select id="gradeFilter">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label>Show
+      <select id="stateFilter">
+        <option value="all">All trophies</option>
+        <option value="remaining">Still to earn</option>
+        <option value="earned">Earned only</option>
+        <option value="missable">Missable watch</option>
+        <option value="hidden">Hidden trophies</option>
+      </select>
+    </label>
+    <label>Sort
+      <select id="sortFilter">
+        <option value="list">Official list order</option>
+        <option value="stage">Roadmap stage</option>
+        <option value="grade">Grade</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </label>
+    <label class="search-label">Search <input id="searchInput" type="search" placeholder="trophy, mission, place…"></label>
+    <label class="spoiler-toggle"><input id="spoilerToggle" type="checkbox"> Spoiler shield: hide story trophies until earned</label>
+  </div>
+</nav>
+
+<main>
+  <section id="roadmapSection" class="panel roadmap-panel">
+    <h2>Roadmap to the platinum — Vice Got a Price!</h2>
+    <p class="panel-intro" id="roadmapFacts"></p>
+    <div class="alert" id="missableAlert"></div>
+    <div class="stages" id="stages"></div>
+    <p class="fineprint">Roadmap shape, difficulty (4/10), the ~200-hour estimate and the missable verdict follow the PowerPyx GTA 6 Trophy Guide &amp; Roadmap (2026-11-18), cited in full under Sources at the foot of this page. Stage text here is written for this guide.</p>
+  </section>
+
+  <section class="panel">
+    <div class="list-head">
+      <h2 id="listTitle">All 55 trophies</h2>
+      <p class="list-count" id="listCount"></p>
+    </div>
+    <div id="trophyList" class="trophy-list"></div>
+    <p id="emptyState" class="empty" hidden></p>
+  </section>
+
+  <section class="panel sources-panel">
+    <h2>Sources</h2>
+    <p class="panel-intro">Trophy names, descriptions and grades are shown exactly as PlayStation publishes them. Every guide on this page is written in this guide's own words; the facts in it are credited to the sources named beside each trophy and listed here. Links open only when you follow them — this app fetches nothing.</p>
+    <ul id="sourceList" class="source-list"></ul>
+  </section>
+</main>
+
+<aside id="detailPanel" class="detail" hidden aria-label="Trophy guide detail">
+  <button id="detailClose" type="button" class="detail-close" aria-label="Close guide">×</button>
+  <div id="detailBody"></div>
+</aside>
+<div id="scrim" class="scrim" hidden></div>
+
+<footer>
+  <p>Leonida Legend — an unofficial, fan-made trophy guide. Not affiliated with Rockstar Games or Take-Two Interactive. No game artwork is used; the look of this page is its own.</p>
+  <p>Progress is stored only in your browser (localStorage) and can be exported and imported above. Guide data: app/data/trophies.json.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
